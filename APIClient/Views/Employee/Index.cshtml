@@ -1,0 +1,64 @@
+﻿@model IEnumerable<APIClient.Models.Emp>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddEmployee")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Eid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.doj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.branch)
+        </th>
+        <th></th>
+
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Eid)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ename)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.sal)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.doj)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.city)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.branch)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "UpdateEmployee", new { id = item.Eid }) |
+        @Html.ActionLink("Delete", "DeleteEmployee", new { id = item.Eid })
+    </td>
+</tr>
+}
+
+</table>
